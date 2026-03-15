@@ -426,16 +426,16 @@
     gap: 2px;
   }
   .gallery-item {
-    aspect-ratio: 3/4;
+    aspect-ratio: 1 / 1;
     background: var(--surface);
     border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
     cursor: pointer;
   }
-  .gallery-item:nth-child(1) { aspect-ratio: 3/4; }
-  .gallery-item:nth-child(2) { grid-row: span 2; aspect-ratio: auto; }
-  .gallery-item:nth-child(5) { grid-column: span 2; aspect-ratio: 16/7; }
+  .gallery-item:nth-child(1) { aspect-ratio: 1 / 1; }
+  .gallery-item:nth-child(2) { grid-row: span 1; aspect-ratio: 1 / 1; }
+  .gallery-item:nth-child(5) { grid-column: span 1; aspect-ratio: 1 / 1; }
   .gallery-placeholder {
     width: 100%;
     height: 100%;
@@ -463,19 +463,29 @@
   .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(10,10,15,0.7);
+    background: rgba(10,10,15,0.75);
     display: flex;
-    align-items: flex-end;
-    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
     opacity: 0;
     transition: opacity 0.4s;
+    gap: 6px;
   }
   .gallery-item:hover .gallery-overlay { opacity: 1; }
   .gallery-caption {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
+    font-size: 14px;
     font-style: italic;
     color: var(--accent3);
+  }
+  .gallery-click-hint {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
   }
   @media (max-width: 600px) {
     #gallery .gallery-grid { grid-template-columns: 1fr 1fr; }
@@ -1160,7 +1170,7 @@
 <!-- 비밀 페이지 -->
 <div id="secret-page">
   <div class="secret-label">— secret archive —</div>
-  <div class="secret-title">"잊어달라고."</div>
+  <div class="secret-title">"잊어줘요, 언니."</div>
   <div class="secret-text">
     4단계 잠식 직전, 정아는 이비아에게 로그를 남겼다.<br><br>
     "잊어달라고."<br><br>
@@ -1596,63 +1606,63 @@
   <div class="gallery-grid-new fade-in">
     <!-- 1: 암케나 - 크게 세로 -->
     <div class="gallery-item hover-glow" onclick="openLightbox('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fc6F5DS%2FdJMcaaduzWD%2FAAAAAAAAAAAAAAAAAAAAACW_L-DRLnB0PsKFurya9L1IcMWPht7XfEtJXJqpYlhO%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DsUepCUb0Ul7fXT3qY117qfDun4c%253D','illust. 암케나 CM')">
-      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fc6F5DS%2FdJMcaaduzWD%2FAAAAAAAAAAAAAAAAAAAAACW_L-DRLnB0PsKFurya9L1IcMWPht7XfEtJXJqpYlhO%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DsUepCUb0Ul7fXT3qY117qfDun4c%253D" alt="암케나 CM" style="width:100%;height:100%;object-fit:cover;min-height:300px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 암케나 CM</span></div>
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fc6F5DS%2FdJMcaaduzWD%2FAAAAAAAAAAAAAAAAAAAAACW_L-DRLnB0PsKFurya9L1IcMWPht7XfEtJXJqpYlhO%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DsUepCUb0Ul7fXT3qY117qfDun4c%253D" alt="암케나 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 암케나 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <!-- 2: 주하나 -->
     <div class="gallery-item hover-glow" onclick="openLightbox('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FMrlN9%2FdJMcaaduzWB%2FAAAAAAAAAAAAAAAAAAAAAKsaue03GtABIra7D6zqpeVJPW1SUoJUXTFnXOiRvk2L%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DXf3Alb5VauApDlSc8zzuPPq29Lg%253D','illust. 주하나 CM')">
-      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FMrlN9%2FdJMcaaduzWB%2FAAAAAAAAAAAAAAAAAAAAAKsaue03GtABIra7D6zqpeVJPW1SUoJUXTFnXOiRvk2L%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DXf3Alb5VauApDlSc8zzuPPq29Lg%253D" alt="주하나 CM" style="width:100%;height:100%;object-fit:cover;min-height:200px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 주하나 CM</span></div>
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FMrlN9%2FdJMcaaduzWB%2FAAAAAAAAAAAAAAAAAAAAAKsaue03GtABIra7D6zqpeVJPW1SUoJUXTFnXOiRvk2L%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DXf3Alb5VauApDlSc8zzuPPq29Lg%253D" alt="주하나 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 주하나 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <!-- 3: 쁘띠 -->
     <div class="gallery-item hover-glow" onclick="openLightbox('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FBZegk%2FdJMcaaduzWC%2FAAAAAAAAAAAAAAAAAAAAAPKuYhEIgo4MOa-GU41NhfirUeqGZCVMKw373KAk7_xD%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DUsQR72GGCX1mRPSPFGfZTDuByTg%253D','illust. 쁘띠 CM')">
-      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FBZegk%2FdJMcaaduzWC%2FAAAAAAAAAAAAAAAAAAAAAPKuYhEIgo4MOa-GU41NhfirUeqGZCVMKw373KAk7_xD%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DUsQR72GGCX1mRPSPFGfZTDuByTg%253D" alt="쁘띠 CM" style="width:100%;height:100%;object-fit:cover;min-height:200px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 쁘띠 CM</span></div>
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FBZegk%2FdJMcaaduzWC%2FAAAAAAAAAAAAAAAAAAAAAPKuYhEIgo4MOa-GU41NhfirUeqGZCVMKw373KAk7_xD%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DUsQR72GGCX1mRPSPFGfZTDuByTg%253D" alt="쁘띠 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 쁘띠 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <!-- 4: 신료 - 가로로 넓게 -->
     <div class="gallery-item hover-glow" onclick="openLightbox('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbfzZQA%2FdJMcaivMhfY%2FAAAAAAAAAAAAAAAAAAAAAA3DBp0PTWTY-txJbFXqE_NeQZN1wzkFrEwEBiEvKRDG%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DeXlwddnicX3nMm3kE%252FcGi3IKdsI%253D','illust. 신료 CM')">
-      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbfzZQA%2FdJMcaivMhfY%2FAAAAAAAAAAAAAAAAAAAAAA3DBp0PTWTY-txJbFXqE_NeQZN1wzkFrEwEBiEvKRDG%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DeXlwddnicX3nMm3kE%252FcGi3IKdsI%253D" alt="신료 CM" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 신료 CM</span></div>
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbfzZQA%2FdJMcaivMhfY%2FAAAAAAAAAAAAAAAAAAAAAA3DBp0PTWTY-txJbFXqE_NeQZN1wzkFrEwEBiEvKRDG%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DeXlwddnicX3nMm3kE%252FcGi3IKdsI%253D" alt="신료 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 신료 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <!-- 5: 자감 (gif) -->
     <div class="gallery-item hover-glow" onclick="openLightbox('https://blog.kakaocdn.net/dna/ccIdbY/dJMcaivMhfW/AAAAAAAAAAAAAAAAAAAAAEuJwZPn1V-L0f438OnkGCbufLXEoSP6QhCuAMWGtidn/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1774969199&allow_ip=&allow_referer=&signature=qubnxZCff8RtY0oGQLQI52yzcQo%3D','illust. 자감 CM')">
-      <img src="https://blog.kakaocdn.net/dna/ccIdbY/dJMcaivMhfW/AAAAAAAAAAAAAAAAAAAAAEuJwZPn1V-L0f438OnkGCbufLXEoSP6QhCuAMWGtidn/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1774969199&allow_ip=&allow_referer=&signature=qubnxZCff8RtY0oGQLQI52yzcQo%3D" alt="자감 CM" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 자감 CM ✦ gif</span></div>
+      <img src="https://blog.kakaocdn.net/dna/ccIdbY/dJMcaivMhfW/AAAAAAAAAAAAAAAAAAAAAEuJwZPn1V-L0f438OnkGCbufLXEoSP6QhCuAMWGtidn/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1774969199&allow_ip=&allow_referer=&signature=qubnxZCff8RtY0oGQLQI52yzcQo%3D" alt="자감 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 자감 CM ✦ gif</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <!-- 6: 이름뭘로하지 -->
     <div class="gallery-item hover-glow" onclick="openLightbox('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbudIog%2FdJMcacPTYDs%2FAAAAAAAAAAAAAAAAAAAAABaQaGUDOibrFsV7qaUC8p8JGj03-t82XmxBPU6J6ogH%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DKT5HllfWRS81%252Ffo0j0EYjkGfNAs%253D','illust. 이름뭘로하지 CM')">
-      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbudIog%2FdJMcacPTYDs%2FAAAAAAAAAAAAAAAAAAAAABaQaGUDOibrFsV7qaUC8p8JGj03-t82XmxBPU6J6ogH%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DKT5HllfWRS81%252Ffo0j0EYjkGfNAs%253D" alt="이름뭘로하지 CM" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 이름뭘로하지 CM</span></div>
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbudIog%2FdJMcacPTYDs%2FAAAAAAAAAAAAAAAAAAAAABaQaGUDOibrFsV7qaUC8p8JGj03-t82XmxBPU6J6ogH%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3DKT5HllfWRS81%252Ffo0j0EYjkGfNAs%253D" alt="이름뭘로하지 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 이름뭘로하지 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <!-- 7: 융 - 가로 넓게 -->
     <div class="gallery-item hover-glow" onclick="openLightbox('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbGDp8f%2FdJMcacPTYDu%2FAAAAAAAAAAAAAAAAAAAAAAjEKv-tqZKlroRuo-y4KVSS_rSZzAQGxeViy3t6m1Li%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3Dw9kI1KO6vbyof1owMAtY5SDuk6Y%253D','illust. 융 CM')">
-      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbGDp8f%2FdJMcacPTYDu%2FAAAAAAAAAAAAAAAAAAAAAAjEKv-tqZKlroRuo-y4KVSS_rSZzAQGxeViy3t6m1Li%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3Dw9kI1KO6vbyof1owMAtY5SDuk6Y%253D" alt="융 CM" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 융 CM</span></div>
+      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbGDp8f%2FdJMcacPTYDu%2FAAAAAAAAAAAAAAAAAAAAAAjEKv-tqZKlroRuo-y4KVSS_rSZzAQGxeViy3t6m1Li%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1774969199%26allow_ip%3D%26allow_referer%3D%26signature%3Dw9kI1KO6vbyof1owMAtY5SDuk6Y%253D" alt="융 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 융 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <!-- 기존 텐시 그림들 -->
     <div class="gallery-item hover-glow" onclick="openLightbox('KakaoTalk_20260314_072836377.jpg','illust. 텐시')">
-      <img src="KakaoTalk_20260314_072836377.jpg" alt="텐시" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 텐시</span></div>
+      <img src="KakaoTalk_20260314_072836377.jpg" alt="텐시" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 텐시</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <div class="gallery-item hover-glow" onclick="openLightbox('KakaoTalk_20260314_072836377_01.png','illust. 유논 CM')">
-      <img src="KakaoTalk_20260314_072836377_01.png" alt="유논 CM" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 유논 CM</span></div>
+      <img src="KakaoTalk_20260314_072836377_01.png" alt="유논 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 유논 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <div class="gallery-item hover-glow" onclick="openLightbox('KakaoTalk_20260314_072836377_02.png','illust. 지인 지원')">
-      <img src="KakaoTalk_20260314_072836377_02.png" alt="지인 지원" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 지인 지원</span></div>
+      <img src="KakaoTalk_20260314_072836377_02.png" alt="지인 지원" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 지인 지원</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <div class="gallery-item hover-glow" onclick="openLightbox('KakaoTalk_20260314_072836377_03.png','illust. 청정수 CM')">
-      <img src="KakaoTalk_20260314_072836377_03.png" alt="청정수 CM" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 청정수 CM</span></div>
+      <img src="KakaoTalk_20260314_072836377_03.png" alt="청정수 CM" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 청정수 CM</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <div class="gallery-item hover-glow" onclick="openLightbox('KakaoTalk_20260314_072836377_04.png','illust. 텐시')">
-      <img src="KakaoTalk_20260314_072836377_04.png" alt="텐시" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 텐시</span></div>
+      <img src="KakaoTalk_20260314_072836377_04.png" alt="텐시" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 텐시</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
     <div class="gallery-item hover-glow" onclick="openLightbox('KakaoTalk_20260314_072836377_05.png','illust. 텐시')">
-      <img src="KakaoTalk_20260314_072836377_05.png" alt="텐시" style="width:100%;height:100%;object-fit:cover;min-height:220px;">
-      <div class="gallery-overlay"><span class="gallery-caption">illust. 텐시</span></div>
+      <img src="KakaoTalk_20260314_072836377_05.png" alt="텐시" style="width:100%;height:100%;object-fit:cover;min-height:unset;">
+      <div class="gallery-overlay"><span class="gallery-caption">illust. 텐시</span><span class="gallery-click-hint">click to view original</span></div>
     </div>
   </div>
 </section>
@@ -1756,7 +1766,7 @@
       <div class="timeline-dot"></div>
       <div class="timeline-phase">4막</div>
       <div class="timeline-title">레치타티보</div>
-      <div class="timeline-desc">이비아는 경화수월, 실험으로 인해 감염된 유정아를 발견했습니다. 기침과 식은땀을 흘리면서도 유정아가 신이 준 형벌이라며 자조하는 것을 들은 이비아는 본인의 이야기를 들려주며, 유정아를 다독였습니다. <b style="color:#f5eae8;">유정아는 감염이 옮는다는 사실을 알면서도 애정을 갈구하는 탓인지 이비아와 접촉했으며. 끝내 이비아 또한 감염되었습니다.</b> 첫날, 기침과 식은 땀을 흘리는 유정아가 아프다고 하자 토닥이던 이비아는. 둘째날 오전, 손끝 감각이 저하되고 치솟는 열. 둘은 함께 밤을 지새웠습니다. 둘째날 오후. 유정아는 이비아를 인식하지 못하고 환각을 보기 시작했습니다. <b style="color:#f5eae8;">마지막, '잊어주세요.' 유정아가 이비아에게 남긴 말이었습니다.</b></div>
+      <div class="timeline-desc">이비아는 경화수월, 실험으로 인해 감염된 유정아를 발견했습니다. 기침과 식은땀을 흘리면서도 유정아가 신이 준 형벌이라며 자조하는 것을 들은 이비아는 본인의 이야기를 들려주며, 유정아를 다독였습니다. 첫날, 기침과 식은 땀을 흘리는 유정아가 아프다고 하자 토닥이던 이비아는. 둘째날 오전, 손끝 감각이 저하되고 치솟는 열. <b style="color:#f5eae8;">둘은 함께 밤을 지새웠습니다.</b> 둘째날 오후. 유정아는 이비아를 인식하지 못하고 환각을 보기 시작했습니다. <b style="color:#f5eae8;">마지막, '잊어주세요.' 유정아가 이비아에게 남긴 말이었습니다.</b> 그리고 유정아는 끝내 감염으로 인해 식물인간이 됩니다. <b style="color:#f5eae8;">물론, 위장 죽음이었지만요.</b></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
@@ -1768,7 +1778,7 @@
       <div class="timeline-dot"></div>
       <div class="timeline-phase">6막</div>
       <div class="timeline-title">아리아</div>
-      <div class="timeline-desc"><b style="color:#f5eae8;">이비아는 자취를 감추었습니다.</b> 함께 나누었던 말들, 사소한 약속들이 전부 존재하지 않았다는 것처럼 그녀의 흔적은 도리어 찾기 어려웠습니다. 유정아는 빈 연회장에 남아. <b style="color:#f5eae8;">건반이 없는 피아노를 치듯 허공 위에 선율을 그렸습니다.</b> 그녀가 사라진 것은 그녀의 자의일 것입니다. 유정아는 그렇게 생각했습니다.</div>
+      <div class="timeline-desc">      <div class="timeline-desc"><b style="color:#f5eae8;">이비아는 자취를 감추었습니다.</b> 함께 나누었던 말들, 사소한 약속들이 전부 존재하지 않았다는 것처럼 그녀의 흔적은 도리어 찾기 어려웠습니다. 유정아는 빈 연회장에 남아. <b style="color:#f5eae8;">건반이 없는 피아노를 치듯 허공 위에 선율을 그렸습니다.</b> 손끝이 닿는 건 아무것도 없었습니다. 이비아가 마지막으로 웃던 얼굴이 떠올랐습니다. 분노도 실망도 아닌, 그 조용하고 낮은 목소리가. 가면처럼 쓴 웃음 뒤에 무엇이 있었는지, 유정아는 알고 있었습니다. 그래서 더 물어볼 수가 없었습니다. <em>언니는 지금 어디에 있을까.</em> 묻지 않아도 알고 있었습니다. 그녀가 사라진 것은 그녀의 자의일 것입니다. 그리고 유정아는, 비로소 깨달았습니다. 자신이 무대 위에 올린 것이 무엇이었는지. 자신이 삼킨 것이 누구였는지. 그 파멸을 기꺼이 선택한 것이, 결국 자신이었다는 것을. <b style="color:#f5eae8;">선율은 멈추었습니다. 유정아는, 이비아의 앞에서 죽었습니다.</b> 이비아는 그것을 바라보았습니다. 아무 말도 없이. 분노도 눈물도 없이. 다만 오래, 바라보았습니다. 마치 처음부터 이렇게 될 것을 알고 있었다는 듯이. <b style="color:#f5eae8;">그것이 이 무대의 마지막 장면이었습니다.</b></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
@@ -1806,6 +1816,25 @@
       <p style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--text);line-height:2.2;">
         당신이 빚어낸 이 아리아는,<br>
         끝난 뒤에도 오래도록 울립니다.
+      </p>
+
+      <div style="width:40px;height:1px;background:var(--border);margin:40px auto;"></div>
+
+      <p style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.4em;color:var(--accent2);text-transform:uppercase;margin-bottom:32px;">커미션을 맡아주신 모든 분들께</p>
+
+      <p style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--text-dim);line-height:2.2;margin-bottom:32px;">
+        이 작고 어두운 무대 위의 두 사람을,<br>
+        당신의 손으로 다시 살아 숨쉬게 해주셔서 감사합니다.<br>
+        글자로만 존재하던 유정아와 이비아에게<br>
+        얼굴을 주고, 온도를 주고, 눈빛을 준 것은<br>
+        다름 아닌 당신도 포함입니다.
+      </p>
+
+      <p style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--text-dim);line-height:2.2;margin-bottom:32px;">
+        한 장 한 장이 전부 소중하고, 전부 아름다웠습니다.<br><br>
+        그리고 아직 더 남아있다는 것도 알고 있습니다.<br>
+        앞으로 만들어질 작업물들 또한<br>
+        이 자리에서 오래도록 빛날 것입니다.
       </p>
 
       <div style="width:40px;height:1px;background:var(--border);margin:40px auto;"></div>
